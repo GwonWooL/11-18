@@ -82,7 +82,7 @@
     </div>
 
     <script>
-      const NUMBER_INITIAL_VALUE = -1;  
+      const NUMBER_INITIAL_VALUE = -1;       // 초기값 선언
       let firstNumber = NUMBER_INITIAL_VALUE;
       let secondNumber = NUMBER_INITIAL_VALUE;
 
@@ -90,15 +90,15 @@
       const secondNumberSpan = document.querySelector(".secondNumber");
       const resultSpan = document.querySelector(".result");
 
-      let resetNumber = false;  //
-      function confirmNumber() {
-        if(resetNumber) {
+      let resetNumber = false;    // 리셋 변수 선언
+      function confirmNumber() {  // 숫자가 아닌 연산자 버튼을 눌렀을 경우 resetNumber가 true임 ~> false로 바꿈
+        if(resetNumber) {   
           reset()
         }
         resetNumber = false
       }
 
-      function clickNumber(num) {
+      function clickNumber(num) { // 첫 번째 숫자와 두 번째 숫자가 비워져있으면 각각 채운다.
         confirmNumber();
         if (firstNumber === NUMBER_INITIAL_VALUE) {
           firstNumber = num;
@@ -155,7 +155,7 @@
         }
       })
 
-      function calculate(operator) {
+      function calculate(operator) {  // 계산 수행 함수
         let result
         switch (operator) {
           case "+": 
@@ -170,7 +170,7 @@
         return result;
       }
 
-      function reset() {
+      function reset() {  // 모두 초기화!
         firstNumber = NUMBER_INITIAL_VALUE;
         secondNumber = NUMBER_INITIAL_VALUE;
 
